@@ -1,12 +1,5 @@
--------------------------                                                    -------------------------
-Teja Kumar Reddy Peddi                                                                            jiji
--------------------------                                                    -------------------------
 
--------------------     ----------------------------
-1 MyAddress                        email@example.com
-MyTown 1000                          @twitter_handle
-MyCountry                           1800 my-phone-nr
--------------------     ----------------------------
+# Teja Kumar Reddy Peddi
 
 +1 667-379-1199 | tejakumar581@gmail.com | [LinkedIn](https://www.linkedin.com/in/teja-peddi-462190191)
 
