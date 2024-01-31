@@ -1,4 +1,4 @@
-
+![](https://github.com/Tejakumar/UMBC-DATA606-Capstone/blob/main/docs/IMG_9936-2.jpg)
 # Teja Kumar Reddy Peddi
 
 +1 667-379-1199 | tejakumar581@gmail.com | [LinkedIn](https://www.linkedin.com/in/teja-peddi-462190191)
