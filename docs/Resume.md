@@ -1,6 +1,5 @@
 Teja Kumar Reddy Peddi
-Johnny Coder
-============
+==
 
 -------------------     ----------------------------
 1 MyAddress                        email@example.com
