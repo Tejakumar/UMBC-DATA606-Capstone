@@ -1,5 +1,6 @@
-Teja Kumar Reddy Peddi
-==
+-------------------------                                                    -------------------------
+Teja Kumar Reddy Peddi                                                                            jiji
+-------------------------                                                    -------------------------
 
 -------------------     ----------------------------
 1 MyAddress                        email@example.com
@@ -7,87 +8,60 @@ MyTown 1000                          @twitter_handle
 MyCountry                           1800 my-phone-nr
 -------------------     ----------------------------
 
-Education
----------
++1 667-379-1199 | tejakumar581@gmail.com | [LinkedIn](https://www.linkedin.com/in/teja-peddi-462190191)
 
-2010-2014 (expected)
-:   **PhD, Computer Science**; Awesome University (MyTown)
+## Education
 
-    *Thesis title: Deep Learning Approaches to the Self-Awesomeness
-     Estimation Problem*
+**University of Maryland, Baltimore County** (May 2024)  
+*Master of Professional Studies in Data Science*  
+CGPA: 3.7/4.0
 
-2007-2010
-:   **BSc, Computer Science and Electrical Engineering**; University of
-    HomeTown (HomeTown)
+**Chandigarh University, Punjab** (2018-2022)  
+*Bachelor of Computer Science Engineering*  
+CGPA: 3.4/4.0
 
-    *Minor: Awesomeology*
+## Technical Competencies
 
-Experience
-----------
+- **Languages:** Python, SQL, R, Java, C++, HTML, CSS, Javascript
+- **Technologies and Tools:** Apache Spark, Azure Cloud, Tableau, Numpy, Pandas, sklearn, Tensorflow, keras, PyTorch, NLP, Machine learning, Statistical learning, Deep learning.
+- **Data Structures and Algorithms**
 
-**Your Most Recent Work Experience:**
+## Experience
 
-Short text containing the type of work done, results obtained,
-lessons learned and other remarks. Can also include lists and
-links:
+**Data Analyst Intern**  
+*Centronics Systems, Hyderabad, India* (June 2021 - Aug 2022)
 
-* First item
+- Worked with Analytics team on large datasets for business growth
+- Data Pre-processing and Exploratory Data Analysis of Customer data
+- Generated Weekly data reports, data analysis dashboards, and maintenance of Databases
 
-* Item with [link](http://www.example.com). Links will work both in
-  the html and pdf versions.
+## Projects
 
-**That Other Job You Had**
+**Sentiment Classification using Deep Learning** (May 2023)
 
-Also with a short description.
+- Used multiple neural networks, including CNN, RNN, to classify sentiment of IMDb reviews
+- Applied Natural Language Processing techniques like tokenization, word embedding, etc.
+- Used LSTM with adam optimizer for the final model and achieved an accuracy of 86%.
 
-Technical Experience
---------------------
+**NYPD Call Data Analysis** (Jan 2023)
 
-My Cool Side Project
-:   For items which don't have a clear time ordering, a definition
-    list can be used to have named items.
+- Performed analysis using PySpark in Databricks on 1.86 million 911 call records of NYPD
+- Identified patterns and trends in call types, call timings, and gained insights into types of emergency situations for effective resource management
+- Analysis resulted in better resource allocation, route optimizations, expected busy hours, and priority changes for emergency types
 
-    * These items can also contain lists, but you need to mind the
-      indentation levels in the markdown source.
-    * Second item.
+**HighRadius (Project Internship)** - *Fintech B2B Application using Machine Learning* (May 2021)
 
-Open Source
-:   List open source contributions here, perhaps placing emphasis on
-    the project names, for example the **Linux Kernel**, where you
-    implemented multithreading over a long weekend, or **node.js**
-    (with [link](http://nodejs.org)) which was actually totally
-    your idea...
+- Built a web application for searching and sorting invoice data with a prediction of payment dates
+- Used B2B invoice dataset provided by HighRadius and trained ML models to predict payment dates
+- Performed end-to-end data science lifecycle from EDA, Feature engineering to Model evaluation, and used XGBoost for the final model, achieving an R-squared score of 0.88.
 
-Programming Languages
-:   **first-lang:** Here, we have an itemization, where we only want
-    to add descriptions to the first few items, but still want to
-    mention some others together at the end. A format that works well
-    here is a description list where the first few items have their
-    first word emphasized, and the last item contains the final few
-    emphasized terms. Notice the reasonably nice page break in the pdf
-    version, which wouldn't happen if we generated the pdf via html.
+## Certifications
 
-:   **second-lang:** Description of your experience with second-lang,
-    perhaps again including a [link] [ref], this time placing the url
-    reference elsewhere in the document to reduce clutter (see source
-    file). 
+1. Deep Learning Specialization, Coursera
+2. Azure Cloud Computing, Verzeo
 
-:   **obscure-but-impressive-lang:** We both know this one's pushing
-    it.
+## Activities and Achievements
 
-:   Basic knowledge of **C**, **x86 assembly**, **forth**, **Common Lisp**
-
-[ref]: https://github.com/githubuser/superlongprojectname
-
-Extra Section, Call it Whatever You Want
-----------------------------------------
-
-* Human Languages:
-
-     * English (native speaker)
-     * ???
-     * This is what a nested list looks like.
-
-* Random tidbit
-
-* Other sort of impressive-sounding thing you did
+1. Art of Living (Volunteer) - Taught classes and conducted camps on youth empowerment and leadership skills
+2. Outstanding performer in AWS Cloud program at Verzeo
+3. Received A and B certificates in N.C.C. (National Cadet Corps)
