@@ -41,7 +41,7 @@ A credit card client
 2. **LIMIT_BAL:** Amount of given credit in NT dollars
 3. **SEX:** Gender (1=male, 2=female)
 4. **EDUCATION:** Level of education (1=graduate school, 2=university, 3=high school, 4=others, 5=unknown, 6=unknown)
-5. **MARRIAGE:** Marital status (1=married, 2=single, 3=others)
+5. **MARRIAGE:** Marital status (1=married, 2=single, 3=divorce, 0=others)
 6. **AGE:** Age in years
 7. **PAY_0** to **PAY_6:** Repayment status from April to September 2005(-2 = No transactions, -1 = Paid in full, 0 = Minimum due paid, 1 to 9 = No. of months delayed)
 8. **BILL_AMT1** to **BILL_AMT6:** Amount of bill statement from April to September 2005 (NT Dollars)
