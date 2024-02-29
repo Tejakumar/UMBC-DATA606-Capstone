@@ -43,9 +43,9 @@ A credit card client
 4. **EDUCATION:** Level of education (1=graduate school, 2=university, 3=high school, 4=others, 5=unknown, 6=unknown)
 5. **MARRIAGE:** Marital status (1=married, 2=single, 3=others)
 6. **AGE:** Age in years
-7. **PAY_0** to **PAY_6:** Repayment status from April to September 2005
-8. **BILL_AMT1** to **BILL_AMT6:** Amount of bill statement from April to September 2005
-9. **PAY_AMT1** to **PAY_AMT6:** Amount of previous payment from April to September 2005
+7. **PAY_0** to **PAY_6:** Repayment status from April to September 2005(-2 = paid fully and no transactions, -1=paid fully but account has a positive balance, 0 = minimum due paid, 1 to 9 = No. of months delayed)
+8. **BILL_AMT1** to **BILL_AMT6:** Amount of bill statement from April to September 2005 (NT Dollars)
+9. **PAY_AMT1** to **PAY_AMT6:** Amount of previous payment from April to September 2005 (NT Dollars)
 10. **default.payment.next.month:** Default payment indicator (1=yes, 0=no)
 
 ### Target/Label Variable:
