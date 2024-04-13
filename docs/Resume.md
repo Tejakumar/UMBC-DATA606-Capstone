@@ -56,5 +56,4 @@ CGPA: 3.4/4.0
 ## Activities and Achievements
 
 1. Art of Living (Volunteer) - Taught classes and conducted camps on youth empowerment and leadership skills
-2. Outstanding performer in AWS Cloud program at Verzeo
 3. Received A and B certificates in N.C.C. (National Cadet Corps)
