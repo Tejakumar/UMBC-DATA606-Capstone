@@ -3,11 +3,16 @@
 import streamlit as st
 import pickle
 import numpy as np 
+from pathlib import Path
 
 st.set_page_config(layout="wide")
 
-model = pickle.load(open('model.pkl', 'rb'))
-scaler = pickle.load(open('scaler.pkl', 'rb'))
+base_path = Path(__file__).parent
+model_path = base_path / 'model.pkl'
+scaler_path = base_path / 'scaler.pkl'
+
+model = pickle.load(open(model_path, 'rb'))
+scaler = pickle.load(open(scaler_path, 'rb'))
 
 
 st.markdown("<div style='text-align: center;'><h1>Credit Card Default Prediction</h1></div>", unsafe_allow_html=True)
