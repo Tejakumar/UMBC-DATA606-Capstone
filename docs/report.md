@@ -8,7 +8,7 @@
 **Author Name** Teja Kumar Reddy Peddi  
 **Github:** [Github](https://github.com/Tejakumar)  
 **Linkedin:** [linkedin](https://www.linkedin.com/in/teja-peddi-462190191/)  
-**Presentation**  
+**Presentation:**  
 **Youtube:** 
 
 ## Background
