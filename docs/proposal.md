@@ -6,8 +6,10 @@
 **Project Title:** Credit Card Default Prediction  
 **Prepared for:** UMBC Data Science Master Degree Capstone by Dr. Chaojie (Jay) Wang  
 **Author Name** Teja Kumar Reddy Peddi  
-**Github Link** [Github](https://github.com/Tejakumar)  
-**Linkedin Link** [linkedin](https://www.linkedin.com/in/teja-peddi-462190191/)
+**Github:** [Github](https://github.com/Tejakumar)  
+**Linkedin:** [linkedin](https://www.linkedin.com/in/teja-peddi-462190191/)
+**Presentation**
+**Youtube:** 
 
 ## Background
 
@@ -56,3 +58,6 @@ All other variables except ID, as they may influence the likelihood of default.
 
 By analyzing this dataset and applying machine learning algorithms, we aim to build a predictive model that accurately identifies individuals at risk of defaulting on their credit card payments, thus assisting financial institutions in risk assessment and decision-making processes.
 
+###Exploratory Data Analysis
+
+results of EDA, results of ML, conclusion and may be future research direction
