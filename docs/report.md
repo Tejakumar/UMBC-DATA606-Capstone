@@ -95,7 +95,7 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
 
 **Confusion Matrix**  
 ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/10.png)  
-The Confusion matrix shows that we have a pretty good balance of the values with very less False Positive and False Negative Values  
+The Confusion matrix shows that we have a good balance of the values with very less False Positive and False Negative Values  
 
 ### Conclusion
 - Overall, the Random Forest model with tuned parameters using GridSearchCV has acheived an Accuracy of 74.25% in predicting credit card defaults using various demographic factors and previous payment histories
