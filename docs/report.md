@@ -84,17 +84,18 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
  - Divided the data into Train test split of 80-20
  - Implemented Logistic regression, Decision Trees, Random Forest Classifier and XGBoost
  - Achieved best results with Random Forest, but found that the model is slightly overfitting
- - Implemented Hyper parameter Tuning using GridSearchCV with 5-fold Cross validation and eliminated overfitting
-**RESULTS**
+ - Implemented Hyper parameter Tuning using GridSearchCV with 5-fold Cross validation and eliminated overfitting  
+
+**RESULTS**  
 - Train Accuracy : 79.32%
 - Test Accuracy : 74.25%
 - Precision : 0.75
 - Recall : 0.74
 - F1-Score : 0.74
 
-**Confusion Matrix**
+**Confusion Matrix**  
 ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/10.png)  
-The Confusion matrix shows that we have a pretty good balance of the values with very less False Positive and False Negative Values
+The Confusion matrix shows that we have a pretty good balance of the values with very less False Positive and False Negative Values  
 
 ### Conclusion
 - Overall, the Random Forest model with tuned parameters using GridSearchCV has acheived an Accuracy of 74.25% in predicting credit card defaults using various demographic factors and previous payment histories
