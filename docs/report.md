@@ -72,10 +72,29 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
    ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/8.png)  
    Considering the level of education, it seems that a higher education translates to a lower chance of default  
 5. Insights of Credit Limit  
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/9.png)  
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/lim2.png)  
    - Over 30% of default can be observed with credit limit of 50K or less
    - Also, the higher the credit limit, the lower is the chance of defaulting  
 6. Insights on Previous month payment status  
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/lim2.png)  
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/9.png)  
    It is observed that the likelihood of default are much lower for the people who duly paid or paying minimum due each month rather than the people who tend to delay their payment over months.
-   
+
+### Modelling
+ - As the data was unbalanced, I have undersampled the majority class and slightly oversampled the minority class
+ - Divided the data into Train test split of 80-20
+ - Implemented Logistic regression, Decision Trees, Random Forest Classifier and XGBoost
+ - Achieved best results with Random Forest, but found that the model is slightly overfitting
+ - Implemented Hyper parameter Tuning using GridSearchCV with 5-fold Cross validation and eliminated overfitting
+**RESULTS**
+- Train Accuracy : 79.32%
+- Test Accuracy : 74.25%
+- Precision : 0.75
+- Recall : 0.74
+- F1-Score : 0.74
+
+**Confusion Matrix**
+![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/10.png)  
+The Confusion matrix shows that we have a pretty good balance of the values with very less False Positive and False Negative Values
+
+### Conclusion
+- Overall, the Random Forest model with tuned parameters using GridSearchCV has acheived an Accuracy of 74.25% in predicting credit card defaults using various demographic factors and previous payment histories
