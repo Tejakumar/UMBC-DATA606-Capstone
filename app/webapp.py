@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 
 
 
-urlm = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/model.pkl'
+#urlm = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/model.pkl'
 urls = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/scaler.pkl'
 
 m = requests.get(urlm)
