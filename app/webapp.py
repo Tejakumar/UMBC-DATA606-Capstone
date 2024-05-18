@@ -13,8 +13,8 @@ urls = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/scaler.
 m = requests.get(urlm)
 s = requests.get(urls)
 
-model = pickle.load(m.content)
-scaler = pickle.load(s.content)
+model = pickle.loads(m.content)
+scaler = pickle.loads(s.content)
 
 
 st.markdown("<div style='text-align: center;'><h1>Credit Card Default Prediction</h1></div>", unsafe_allow_html=True)
