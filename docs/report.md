@@ -61,10 +61,10 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
 ### Exploratory Data Analysis
 1. Insights on Age
    ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/2.png)
-   The age group of 30-35 years old has lowest chances for defaulting, while the highest occur at the extremes(20-25 and 60+)
+   The age group of 30-35 years old has lowest chances for defaulting, while the highest occur at the extremes(20-25 and 60+)  
 2. Insights on Gender
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/3.png)
-   It is observed that Men have a slightly higher chance of defaulting than women
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/4.png)
+   It is observed that Men have a slightly higher chance of defaulting than women  
 3. Insights on Marital Status
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/5.png)
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/6.png)
    It is observed that Single people have lower chances of defaulting than married and divorced people.
