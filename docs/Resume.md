@@ -1,4 +1,4 @@
-![](https://github.com/tejapeddi1/Startup/blob/main/photo.jpeg)
+![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/photo.jpeg)
 # Teja Kumar Reddy Peddi
 
 +1 667-379-1199 | tejakumar581@gmail.com | [LinkedIn](https://www.linkedin.com/in/teja-peddi-462190191)
