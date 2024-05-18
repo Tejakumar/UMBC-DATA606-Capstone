@@ -71,7 +71,7 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
 4. Insights on Education Level  
    ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/8.png)  
    Considering the level of education, it seems that a higher education translates to a lower chance of default
-5. Insights of Credit Limit
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/10.png)
+5. Insights of Credit Limit  
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/10.png)  
    - Over 30% of default can be observed with credit limit of 50K or less
    - Also, the higher the credit limit, the lower is the chance of defaulting
