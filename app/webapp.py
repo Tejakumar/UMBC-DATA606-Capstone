@@ -5,17 +5,6 @@ import requests
 
 st.set_page_config(layout="wide")
 
-
-
-# urlm = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/model.pkl'
-# urls = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/scaler.pkl'
-
-# m = requests.get(urlm)
-# s = requests.get(urls)
-
-# model = pickle.loads(m.content)
-# scaler = pickle.loads(s.content)
-
 model = pickle.load(open('app/model.pkl', 'rb'))
 scaler = pickle.load(open('app/scaler.pkl', 'rb'))
 
