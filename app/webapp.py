@@ -1,14 +1,20 @@
-
-
 import streamlit as st
 import pickle
 import numpy as np 
-from pathlib import Path
+import requests
 
 st.set_page_config(layout="wide")
 
-model = pickle.load(open('app/model.pkl', 'rb'))
-scaler = pickle.load(open('app/scaler.pkl', 'rb'))
+
+
+urlm = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/model.pkl'
+urls = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/scaler.pkl'
+
+m = requests.get(urlm)
+s = requests.get(urls)
+
+model = pickle.load(m.content)
+scaler = pickle.load(s.content)
 
 
 st.markdown("<div style='text-align: center;'><h1>Credit Card Default Prediction</h1></div>", unsafe_allow_html=True)
