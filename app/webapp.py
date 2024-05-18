@@ -7,8 +7,8 @@ from pathlib import Path
 
 st.set_page_config(layout="wide")
 
-model = pickle.load(open(app/'model.pkl', 'rb'))
-scaler = pickle.load(open(app/'scaler.pkl', 'rb'))
+model = pickle.load(open('app/model.pkl', 'rb'))
+scaler = pickle.load(open('app/scaler.pkl', 'rb'))
 
 
 st.markdown("<div style='text-align: center;'><h1>Credit Card Default Prediction</h1></div>", unsafe_allow_html=True)
