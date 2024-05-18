@@ -59,4 +59,5 @@ All other variables except ID, as they may influence the likelihood of default.
 By analyzing this dataset and applying machine learning algorithms, we aim to build a predictive model that accurately identifies individuals at risk of defaulting on their credit card payments, thus assisting financial institutions in risk assessment and decision-making processes.
 
 ### Exploratory Data Analysis
+1. Insights on Age Feature
 
