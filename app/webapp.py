@@ -7,14 +7,17 @@ st.set_page_config(layout="wide")
 
 
 
-urlm = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/model.pkl'
-urls = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/scaler.pkl'
+# urlm = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/model.pkl'
+# urls = 'https://github.com/tejapeddi1/UMBC-DATA606-Capstone/raw/main/app/scaler.pkl'
 
-m = requests.get(urlm)
-s = requests.get(urls)
+# m = requests.get(urlm)
+# s = requests.get(urls)
 
-model = pickle.loads(m.content)
-scaler = pickle.loads(s.content)
+# model = pickle.loads(m.content)
+# scaler = pickle.loads(s.content)
+
+model = pickle.load(open('model.pkl', 'rb'))
+scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 
 st.markdown("<div style='text-align: center;'><h1>Credit Card Default Prediction</h1></div>", unsafe_allow_html=True)
