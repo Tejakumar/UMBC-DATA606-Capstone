@@ -60,5 +60,5 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
 
 ### Exploratory Data Analysis
 1. Insights on Age Feature
-   [](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/1.png)
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/1.png)
 
