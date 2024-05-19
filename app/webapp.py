@@ -64,7 +64,7 @@ pay_options = {-2: 'No transactions', -1: 'Paid in full', 0: 'Minimum due paid',
 
 bill_amts = []
 
-for row in input_groups:
+for row in input_rows:
     cols = st.columns(len(row))
     for col, name in zip(cols, row):
         with col:
