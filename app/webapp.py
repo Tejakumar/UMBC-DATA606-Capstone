@@ -57,19 +57,23 @@ cols = st.columns(len(input_row))
 for col, name in zip(cols, input_row):
     with col:
         if name == 'SEX':
-            value = st.selectbox(name, options=list(sex_options.values()), index=0)
-            value = [key for key, val in sex_options.items() if val == value][0]
+            value = st.selectbox(name, options=[''] + list(sex_options.values()))
+            if value:
+                value = [key for key, val in sex_options.items() if val == value][0]
         elif name == 'EDUCATION':
-            value = st.selectbox(name, options=list(education_options.values()), index=0)
-            value = [key for key, val in education_options.items() if val == value][0]
+            value = st.selectbox(name, options=[''] + list(education_options.values()))
+            if value:
+                value = [key for key, val in education_options.items() if val == value][0]
         elif name == 'MARRIAGE':
-            value = st.selectbox(name, options=list(marriage_options.values()), index=0)
-            value = [key for key, val in marriage_options.items() if val == value][0]
+            value = st.selectbox(name, options=[''] + list(marriage_options.values()))
+            if value:
+                value = [key for key, val in marriage_options.items() if val == value][0]
         elif name.startswith('PAY_AMT'):
             value = st.number_input(name, value=None, format="%f", step=1.0)
         elif name.startswith('PAY_'):
-            value = st.selectbox(name, options=list(pay_options.values()), index=0)
-            value = [key for key, val in pay_options.items() if val == value][0]
+            value = st.selectbox(name, options=[''] + list(pay_options.values()))
+            if value:
+                value = [key for key, val in pay_options.items() if val == value][0]
         elif name.startswith('BILL_AMT'):
             value = st.number_input(name, value=None, format="%f", step=1.0)
         else:
@@ -77,18 +81,22 @@ for col, name in zip(cols, input_row):
         st.session_state.feature_values[feature_names.index(name)] = value
 
 # Button controls
-if st.button('Next'):
-    st.session_state.page_num = min(st.session_state.page_num + 1, len(pages) - 1)
-elif st.button('Predict'):
-    data = np.array(st.session_state.feature_values).reshape(1, -1)
-    data = np.nan_to_num(data) # replace NaN with 0
-    data_scaled = scaler.transform(data)
-    prediction = model.predict(data_scaled)
-    result = 'Default' if prediction[0] == 1 else 'Not Default'
-    st.write(f'Prediction: **{result}**')
+if st.session_state.page_num < len(pages) - 1:
+    if st.button('Next'):
+        st.session_state.page_num += 1
+elif st.session_state.page_num == len(pages) - 1:
+    if st.button('Predict'):
+        data = np.array(st.session_state.feature_values).reshape(1, -1)
+        data = np.nan_to_num(data) # replace NaN with 0
+        data_scaled = scaler.transform(data)
+        prediction = model.predict(data_scaled)
+        result = 'Default' if prediction[0] == 1 else 'Not Default'
+        st.write(f'Prediction: **{result}**')
 
-if st.button('Previous'):
-    st.session_state.page_num = max(st.session_state.page_num - 1, 0)
+if st.session_state.page_num > 0:
+    if st.button('Previous'):
+        st.session_state.page_num -= 1
+
 
 
 # import streamlit as st
