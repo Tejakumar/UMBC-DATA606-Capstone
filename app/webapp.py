@@ -49,7 +49,7 @@ def handle_input(page_idx):
         with col:
             idx = feature_names.index(name)
             if name == 'SEX':
-                value = st.selectbox(name, options=list(sex_options.values()), index=0)
+                value = st.selectbox(name, options=list(sex_options.values()))
                 value = [key for key, val in sex_options.items() if val == value][0]
             elif name == 'EDUCATION':
                 value = st.selectbox(name, options=list(education_options.values()), index=0)
