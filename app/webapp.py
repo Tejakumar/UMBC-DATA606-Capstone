@@ -4,7 +4,7 @@ css_code = """
 <style>
 .stApp {
     background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg_img.png?raw=true");
-    background-size: full;
+    background-size: auto;
     background-position: auto;
     background-repeat: no-repeat;
 }
