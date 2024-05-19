@@ -15,6 +15,18 @@ if 'feature_values' not in st.session_state:
 if 'bill_amts' not in st.session_state:
     st.session_state.bill_amts = [0] * 6
 
+# Add background image
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg_img.png?raw=true");
+background-size: cover;
+}
+</style>
+'''
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 st.markdown("<div style='text-align: center;'><h1>Credit Card Default Prediction</h1></div>", unsafe_allow_html=True)
 
 # Define feature names as per the dataset
