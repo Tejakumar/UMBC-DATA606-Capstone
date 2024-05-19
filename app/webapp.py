@@ -44,7 +44,7 @@ pay_options = {-2: 'No transactions', -1: 'Paid in full', 0: 'Minimum due paid',
 
 # Function to handle user input
 def handle_input(page_idx):
-    cols = st.columns(3)  # Adjust the number of columns as needed for better spacing
+    cols = st.columns(1)  # Adjust the number of columns as needed for better spacing
     for i, name in enumerate(pages[page_idx]):
         col = cols[i % len(cols)]
         with col:
