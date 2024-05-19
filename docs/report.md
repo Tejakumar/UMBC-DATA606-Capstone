@@ -1,9 +1,9 @@
 
-<p align="center">
+<h1 align="center">
    
 Project Report
 
-</p>
+</h1>
 
 ## Title and Author
 
