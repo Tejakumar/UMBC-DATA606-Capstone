@@ -2,6 +2,19 @@ import streamlit as st
 import pickle
 import numpy as np
 
+bg = """
+<style>
+<style>
+.stApp {
+    background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg_img.png?raw=true");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(bg, unsafe_allow_html=True)
+
 model = pickle.load(open('app/model.pkl', 'rb'))
 scaler = pickle.load(open('app/scaler.pkl', 'rb'))
 
@@ -15,18 +28,7 @@ if 'feature_values' not in st.session_state:
 if 'bill_amts' not in st.session_state:
     st.session_state.bill_amts = [0] * 6
 
-bg = """
-<style>
-<style>
-.stApp {
-    background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg_img.png?raw=true");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-</style>
-"""
-st.markdown(bg, unsafe_allow_html=True)
+
 
 st.markdown("<div style='text-align: center;'><h1>Credit Card Default Prediction</h1></div>", unsafe_allow_html=True)
 
