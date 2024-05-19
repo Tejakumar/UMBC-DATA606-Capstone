@@ -83,7 +83,9 @@ for row in input_rows:
                 value = value if value is not None else 0.0
             feature_values.append(value)
     if row == input_rows[0]:
-        st.markdown("<div style='text-align: center;'><p>Payment Status of</p></div>", unsafe_allow_html=True)
+        st.markdown("<div style='text-align: center;'><h3>Payment Status of</h3></div>", unsafe_allow_html=True)
+    if row == input_rows[1]:
+        st.markdown("<div style='text-align: center;'><h3>Bill Ammount of </h3></div>", unsafe_allow_html=True)
 
 # Calculate CHANGE_AMT1 to CHANGE_AMT5
 change_amts = [bill_amts[i+1] - bill_amts[i] for i in range(5)]
