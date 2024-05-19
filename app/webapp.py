@@ -97,4 +97,4 @@ if st.button('Predict Default', key='predict_button', help="Click to predict whe
     result = 'Default' if prediction[0] == 1 else 'Not Default'
     st.write(f'Prediction: **{result}**')
 
- st.markdown("</div>", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
