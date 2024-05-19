@@ -1,9 +1,8 @@
 import streamlit as st
 import pickle
-import numpy as np 
-import requests
+import numpy as np
 
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 
 model = pickle.load(open('app/model.pkl', 'rb'))
 scaler = pickle.load(open('app/scaler.pkl', 'rb'))
