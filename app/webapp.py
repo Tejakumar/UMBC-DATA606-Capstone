@@ -55,24 +55,21 @@ for row in input_rows:
         with col:
             if name == 'SEX':
                 value = st.selectbox(name, options=list(sex_options.values()), index=None)
-                value = [key for key, val in sex_options.items() if val == value][0]
             elif name == 'EDUCATION':
                 value = st.selectbox(name, options=list(education_options.values()), index=None)
-                value = [key for key, val in education_options.items() if val == value][0]
             elif name == 'MARRIAGE':
                 value = st.selectbox(name, options=list(marriage_options.values()), index=None)
-                value = [key for key, val in marriage_options.items() if val == value][0]
             elif name.startswith('PAY_AMT'):
                 value = st.number_input(name, value=0.0, format="%f", step=1.0)
             elif name.startswith('PAY_'):
                 value = st.selectbox(name, options=list(pay_options.values()), index=None)
-                value = [key for key, val in pay_options.items() if val == value][0]
             elif name.startswith('BILL_AMT'):
                 value = st.number_input(name, value=0.0, format="%f", step=1.0)
                 bill_amts.append(value)
             else:
                 value = st.number_input(name, value=0.0, format="%f", step=1.0)
             feature_values.append(value)
+
 
 
 # Calculate CHANGE_AMT1 to CHANGE_AMT5
