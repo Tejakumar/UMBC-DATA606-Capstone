@@ -5,8 +5,6 @@
 Project Report
 <br />
 <br />
-<br />
-<br />   
 </h1>
 <h2 align="center">
 Title and Author
