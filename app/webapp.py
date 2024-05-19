@@ -1,14 +1,27 @@
 import streamlit as st
 
-page_bg_img = """
+css_code = """
 <style>
-body {
-background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg_img.png?raw=true");
-background-size: cover;
+html, body, [class*="View"] {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.stApp {
+    background-image: url("https://wallpapercave.com/wp/wp3982250.jpg");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.css-1d391kg, .css-18e3th9 {
+    padding-left: 100;
+    padding-right: -100;
+    margin-left: 0!important;
+    width: 100%!important;
+    max-width: none!important;
 }
 </style>
 """
-st.markdown(page_bg_img, unsafe_allow_html=True)
+st.markdown(css_code, unsafe_allow_html=True)
 
 
 # import streamlit as st
