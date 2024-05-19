@@ -2,14 +2,10 @@ import streamlit as st
 
 css_code = """
 <style>
-html, body, [class*="View"] {
-    margin: 0px !important;
-    padding: 0px !important;
-}
 .stApp {
     background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg_img.png?raw=true");
     background-size: full;
-    background-position: center;
+    background-position: auto;
     background-repeat: no-repeat;
 }
 </style>
