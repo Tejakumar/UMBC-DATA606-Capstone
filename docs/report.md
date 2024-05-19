@@ -5,7 +5,6 @@ Project Report
 <br />
 </h1>
 <h2 align="center">
-Title and Author
 
 **Project Title:** Credit Card Default Prediction  
    
