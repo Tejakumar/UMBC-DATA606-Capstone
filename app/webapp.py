@@ -5,7 +5,7 @@ import numpy as np
 bg = """
 <style>
 .stApp {
-    background-image: url("");
+    background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg.png?raw=True");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
