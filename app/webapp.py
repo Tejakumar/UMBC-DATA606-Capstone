@@ -14,8 +14,6 @@ bg = """
 """
 st.markdown(bg, unsafe_allow_html=True)
 
-st.set_page_config(layout="wide")
-
 model = pickle.load(open('app/model.pkl', 'rb'))
 scaler = pickle.load(open('app/scaler.pkl', 'rb'))
 
