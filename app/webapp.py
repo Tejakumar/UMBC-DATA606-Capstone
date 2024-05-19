@@ -53,60 +53,30 @@ pages = [
 # Input form
 st.header('Page {}'.format(st.session_state.page_num + 1))
 input_row = pages[st.session_state.page_num]
-col1, col2 = st.columns(2)
-for i, name in enumerate(input_row):
-    if i < len(input_row) // 2:
-        with col1:
-            with st.expander(name):
-                if name == 'SEX':
-                    value = st.selectbox(name, options=[''] + list(sex_options.values()))
-                    if value:
-                        value = [key for key, val in sex_options.items() if val == value][0]
-                elif name == 'EDUCATION':
-                    value = st.selectbox(name, options=[''] + list(education_options.values()))
-                    if value:
-                        value = [key for key, val in education_options.items() if val == value][0]
-                elif name == 'MARRIAGE':
-                    value = st.selectbox(name, options=[''] + list(marriage_options.values()))
-                    if value:
-                        value = [key for key, val in marriage_options.items() if val == value][0]
-                elif name.startswith('PAY_AMT'):
-                    value = st.number_input(name, value=None, format="%f", step=1.0)
-                elif name.startswith('PAY_'):
-                    value = st.selectbox(name, options=[''] + list(pay_options.values()))
-                    if value:
-                        value = [key for key, val in pay_options.items() if val == value][0]
-                elif name.startswith('BILL_AMT'):
-                    value = st.number_input(name, value=None, format="%f", step=1.0)
-                else:
-                    value = st.number_input(name, value=None, format="%f", step=1.0)
-                st.session_state.feature_values[feature_names.index(name)] = value
+for name in input_row:
+    if name == 'SEX':
+        value = st.selectbox(name, options=[''] + list(sex_options.values()))
+        if value:
+            value = [key for key, val in sex_options.items() if val == value][0]
+    elif name == 'EDUCATION':
+        value = st.selectbox(name, options=[''] + list(education_options.values()))
+        if value:
+            value = [key for key, val in education_options.items() if val == value][0]
+    elif name == 'MARRIAGE':
+        value = st.selectbox(name, options=[''] + list(marriage_options.values()))
+        if value:
+            value = [key for key, val in marriage_options.items() if val == value][0]
+    elif name.startswith('PAY_AMT'):
+        value = st.number_input(name, value=None, format="%f", step=1.0)
+    elif name.startswith('PAY_'):
+        value = st.selectbox(name, options=[''] + list(pay_options.values()))
+        if value:
+            value = [key for key, val in pay_options.items() if val == value][0]
+    elif name.startswith('BILL_AMT'):
+        value = st.number_input(name, value=None, format="%f", step=1.0)
     else:
-        with col2:
-            with st.expander(name):
-                if name == 'SEX':
-                    value = st.selectbox(name, options=[''] + list(sex_options.values()))
-                    if value:
-                        value = [key for key, val in sex_options.items() if val == value][0]
-                elif name == 'EDUCATION':
-                    value = st.selectbox(name, options=[''] + list(education_options.values()))
-                    if value:
-                        value = [key for key, val in education_options.items() if val == value][0]
-                elif name == 'MARRIAGE':
-                    value = st.selectbox(name, options=[''] + list(marriage_options.values()))
-                    if value:
-                        value = [key for key, val in marriage_options.items() if val == value][0]
-                elif name.startswith('PAY_AMT'):
-                    value = st.number_input(name, value=None, format="%f", step=1.0)
-                elif name.startswith('PAY_'):
-                    value = st.selectbox(name, options=[''] + list(pay_options.values()))
-                    if value:
-                        value = [key for key, val in pay_options.items() if val == value][0]
-                elif name.startswith('BILL_AMT'):
-                    value = st.number_input(name, value=None, format="%f", step=1.0)
-                else:
-                    value = st.number_input(name, value=None, format="%f", step=1.0)
-                st.session_state.feature_values[feature_names.index(name)] = value
+        value = st.number_input(name, value=None, format="%f", step=1.0)
+    st.session_state.feature_values[feature_names.index(name)] = value
 
 # Button controls
 if st.session_state.page_num < len(pages) - 1:
@@ -124,7 +94,6 @@ elif st.session_state.page_num == len(pages) - 1:
 if st.session_state.page_num > 0:
     if st.button('Previous'):
         st.session_state.page_num -= 1
-
 
 
 
