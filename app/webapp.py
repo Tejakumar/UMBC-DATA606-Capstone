@@ -35,12 +35,12 @@ feature_names = [
 ]
 
 feature_display_names = {
-    'LIMIT_BAL': 'CREDIT LIMIT', 'SEX': 'SEX', 'EDUCATION': 'EDUCATION', 'MARRIAGE': 'MARRIAGE', 'AGE': 'AGE',
+    'LIMIT_BAL': 'CREDIT LIMIT', 'SEX': 'SEX', 'EDUCATION': 'EDUCATION LEVEL', 'MARRIAGE': 'MARITAL STATUS', 'AGE': 'AGE',
     'PAY_1': 'Month 1', 'PAY_2': 'Month 2', 'PAY_3': 'Month 3', 'PAY_4': 'Month 4', 'PAY_5': 'Month 5', 'PAY_6': 'Month 6',
-    'BILL_AMT1': 'Bill Amount M1', 'BILL_AMT2': 'Bill Amount M2', 'BILL_AMT3': 'Bill Amount M3',
-    'BILL_AMT4': 'Bill Amount M4', 'BILL_AMT5': 'Bill Amount M5', 'BILL_AMT6': 'Bill Amount M6',
-    'PAY_AMT1': 'Payment Amount M1', 'PAY_AMT2': 'Payment Amount M2', 'PAY_AMT3': 'Payment Amount M3',
-    'PAY_AMT4': 'Payment Amount M4', 'PAY_AMT5': 'Payment Amount M5', 'PAY_AMT6': 'Payment Amount M6'
+    'BILL_AMT1': 'BILL Month 1', 'BILL_AMT2': 'BILL Month 2', 'BILL_AMT3': 'BILL Month3',
+    'BILL_AMT4': 'BILL Month 4', 'BILL_AMT5': 'BILL Month 5', 'BILL_AMT6': 'BILL Month 6',
+    'PAY_AMT1': 'PAYMENT Month 1', 'PAY_AMT2': 'PAYMENT Month 2', 'PAY_AMT3': 'PAYMENT Month 3',
+    'PAY_AMT4': 'PAYMENT Month 4', 'PAY_AMT5': 'PAYMENT Month 5', 'PAY_AMT6': 'PAYMENT Month 6'
 }
 
 # Create inputs for the features
