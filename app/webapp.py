@@ -79,14 +79,18 @@ for row in input_rows:
                 value = st.selectbox(display_name, options=[''] + list(marriage_options.values()), index=0)
                 value = [key for key, val in marriage_options.items() if val == value][0] if value else 0
             elif name.startswith('PAY_AMT'):
-                value = st.number_input(display_name, min_value=0.0, format="%f", step=1.0)
+                value = st.number_input(display_name, value=None, format="%f", step=1.0)
+                value = value if value is not None else 0.0
             elif name.startswith('PAY_'):
                 value = st.selectbox(display_name, options=[''] + list(pay_options.values()), index=0)
                 value = [key for key, val in pay_options.items() if val == value][0] if value else 0
             elif name.startswith('BILL_AMT'):
-                value = st.number_input(display_name, min_value=0.0, format="%f", step=1.0)
+                value = st.number_input(display_name, value=None, format="%f", step=1.0)
+                value = value if value is not None else 0.0
+                bill_amts.append(value)
             else:
-                value = st.number_input(display_name, min_value=0.0, format="%f", step=1.0)
+                value = st.number_input(name, value=None, format="%f", step=1.0)
+                value = value if value is not None else 0.0
             feature_values.append(value)
     if row == input_rows[0]:
         st.markdown("<div style='text-align: left;'><h4>Payment Status</h4></div>", unsafe_allow_html=True)
