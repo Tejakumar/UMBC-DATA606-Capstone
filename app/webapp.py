@@ -8,7 +8,7 @@ html, body, [class*="View"] {
 }
 .stApp {
     background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg_img.png?raw=true");
-    background-size: cover;
+    background-size: full;
     background-position: center;
     background-repeat: no-repeat;
 }
