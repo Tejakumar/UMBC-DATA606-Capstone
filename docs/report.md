@@ -1,5 +1,5 @@
 
-# Project Report
+| # Project Report |
 
 ## Title and Author
 
