@@ -7,11 +7,11 @@ Project Report
 <br />
 <br />
 <br />   
+</h1>
+<h2 align="center">
 Title and Author
 
 **Project Title:** Credit Card Default Prediction  
-</h1>
-<h2 align="center">
    
 **Prepared for:** UMBC Data Science Master Degree Capstone by Dr. Chaojie (Jay) Wang  
 **Author Name** Teja Kumar Reddy Peddi
