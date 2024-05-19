@@ -59,15 +59,15 @@ def handle_input(page_idx):
                 value = st.selectbox(name, options=[''] + list(marriage_options.values()), index=0)
                 value = [key for key, val in marriage_options.items() if val == value][0] if value else None
             elif name.startswith('PAY_AMT'):
-                value = st.number_input(name, value=None, format="%f", step = None)
+                value = st.number_input(name, value=None, format="%f")
             elif name.startswith('PAY_'):
                 value = st.selectbox(name, options=[''] + list(pay_options.values()), index=0)
                 value = [key for key, val in pay_options.items() if val == value][0] if value else None
             elif name.startswith('BILL_AMT'):
-                value = st.number_input(name, value=0.0, format="%f", step=None)
+                value = st.number_input(name, value=None, format="%f")
                 st.session_state.bill_amts[idx - 11] = value
             else:
-                value = st.number_input(name, value=0.0, format="%f", step=None)
+                value = st.number_input(name, value=None, format="%f")
             st.session_state.feature_values[idx] = value
 
 # Handle navigation
