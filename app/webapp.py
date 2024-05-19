@@ -62,8 +62,8 @@ for row in input_rows:
     for col, name in zip(cols, row):
         with col:
             if name == 'SEX':
-                value = st.selectbox(name, options=list(sex_options.values()), index=0)
-                value = [key for key, val in sex_options.items() if val == value][0]
+                value = st.selectbox(name, options=[''] + list(sex_options.values()), index=0)
+                value = [key for key, val in sex_options.items() if val == value][0] if value else None
             elif name == 'EDUCATION':
                 value = st.selectbox(name, options=list(education_options.values()), index=0)
                 value = [key for key, val in education_options.items() if val == value][0]
