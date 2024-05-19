@@ -16,14 +16,14 @@ if 'bill_amts' not in st.session_state:
     st.session_state.bill_amts = [0] * 6
 
 # Add background image
-page_bg_img = '''
+page_bg_img = """
 <style>
 body {
 background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg_img.png?raw=true");
 background-size: cover;
 }
 </style>
-'''
+"""
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
