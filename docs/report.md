@@ -6,8 +6,7 @@
 Project Report
 
 
-
-
+  
 Title and Author
 
 **Project Title:** Credit Card Default Prediction  
