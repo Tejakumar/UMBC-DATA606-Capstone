@@ -5,6 +5,22 @@ import requests
 
 st.set_page_config(layout="wide")
 
+css_code = """
+<style>
+html, body, [class*="View"] {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.stApp {
+    background-image: url("https://wallpapercave.com/wp/wp3982250.jpg");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(css_code, unsafe_allow_html=True)
+
 model = pickle.load(open('app/model.pkl', 'rb'))
 scaler = pickle.load(open('app/scaler.pkl', 'rb'))
 
