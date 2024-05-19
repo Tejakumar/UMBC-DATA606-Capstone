@@ -65,16 +65,16 @@ for row in input_rows:
                 value = st.selectbox(name, options=[''] + list(sex_options.values()), index=0)
                 value = [key for key, val in sex_options.items() if val == value][0] if value else None
             elif name == 'EDUCATION':
-                value = st.selectbox(name, options=list(education_options.values()), index=0)
-                value = [key for key, val in education_options.items() if val == value][0]
+                value = st.selectbox(name, options=[''] + list(education_options.values()), index=0)
+                value = [key for key, val in education_options.items() if val == value][0] if value else None
             elif name == 'MARRIAGE':
-                value = st.selectbox(name, options=list(marriage_options.values()), index=0)
-                value = [key for key, val in marriage_options.items() if val == value][0]
+                value = st.selectbox(name, options=[''] + list(marriage_options.values()), index=0)
+                value = [key for key, val in marriage_options.items() if val == value][0] if value else None
             elif name.startswith('PAY_AMT'):
                 value = st.number_input(name, value=0.0, format="%f", step=1.0)
             elif name.startswith('PAY_'):
-                value = st.selectbox(name, options=list(pay_options.values()), index=0)
-                value = [key for key, val in pay_options.items() if val == value][0]
+                value = st.selectbox(name, options=[''] + (pay_options.values()), index=0)
+                value = [key for key, val in pay_options.items() if val == value][0] if value else None
             elif name.startswith('BILL_AMT'):
                 value = st.number_input(name, value=0.0, format="%f", step=1.0)
                 bill_amts.append(value)
