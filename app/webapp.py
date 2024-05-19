@@ -1,7 +1,6 @@
-
 import streamlit as st
 import pickle
-import numpy as np
+import numpy as np 
 
 css_code = """
 <style>
@@ -19,18 +18,11 @@ html, body, [class*="View"] {
 """
 st.markdown(css_code, unsafe_allow_html=True)
 
-model = pickle.load(open('app/model.pkl', 'rb'))
-scaler = pickle.load(open('app/scaler.pkl', 'rb'))
+st.set_page_config(layout="wide")
 
-# Initialize session state variables
-if 'page' not in st.session_state:
-    st.session_state.page = 0
+model = pickle.load(open('model.pkl', 'rb'))
+scaler = pickle.load(open('scaler.pkl', 'rb'))
 
-if 'feature_values' not in st.session_state:
-    st.session_state.feature_values = [0] * 23
-
-if 'bill_amts' not in st.session_state:
-    st.session_state.bill_amts = [0] * 6
 
 st.markdown("<div style='text-align: center;'><h1>Credit Card Default Prediction</h1></div>", unsafe_allow_html=True)
 
@@ -42,12 +34,15 @@ feature_names = [
     'PAY_AMT2', 'PAY_AMT3', 'PAY_AMT4', 'PAY_AMT5', 'PAY_AMT6'
 ]
 
-# Pages definition
-pages = [
+# Create inputs for the features
+feature_values = []
+
+# Use columns to organize the inputs
+input_rows = [
     feature_names[:5],
     feature_names[5:11],
     feature_names[11:17],
-    feature_names[17:23]
+    feature_names[17:23],
 ]
 
 # Mapping for dropdown options
@@ -59,59 +54,55 @@ pay_options = {-2: 'No transactions', -1: 'Paid in full', 0: 'Minimum due paid',
                4: '4 months delay', 5: '5 months delay', 6: '6 months delay', 
                7: '7 months delay', 8: '8 months delay'}
 
-# Function to handle user input
-def handle_input(page_idx):
-    cols = st.columns(1)  # Adjust the number of columns as needed for better spacing
-    for i, name in enumerate(pages[page_idx]):
-        col = cols[i % len(cols)]
+bill_amts = []
+
+for row in input_rows:
+    cols = st.columns(len(row))
+    for col, name in zip(cols, row):
         with col:
-            idx = feature_names.index(name)
             if name == 'SEX':
-                value = st.selectbox(name, options=[''] + list(sex_options.values()), index=0)
-                value = [key for key, val in sex_options.items() if val == value][0] if value else None
+                value = st.selectbox(name, options=list(sex_options.values()), index=0)
+                value = [key for key, val in sex_options.items() if val == value][0]
             elif name == 'EDUCATION':
-                value = st.selectbox(name, options=[''] + list(education_options.values()), index=0)
-                value = [key for key, val in education_options.items() if val == value][0] if value else None
+                value = st.selectbox(name, options=list(education_options.values()), index=0)
+                value = [key for key, val in education_options.items() if val == value][0]
             elif name == 'MARRIAGE':
-                value = st.selectbox(name, options=[''] + list(marriage_options.values()), index=0)
-                value = [key for key, val in marriage_options.items() if val == value][0] if value else None
+                value = st.selectbox(name, options=list(marriage_options.values()), index=0)
+                value = [key for key, val in marriage_options.items() if val == value][0]
             elif name.startswith('PAY_AMT'):
-                value = st.number_input(name, value=None, format="%f")
+                value = st.number_input(name, value=0.0, format="%f", step=1.0)
             elif name.startswith('PAY_'):
-                value = st.selectbox(name, options=[''] + list(pay_options.values()), index=0)
-                value = [key for key, val in pay_options.items() if val == value][0] if value else None
+                value = st.selectbox(name, options=list(pay_options.values()), index=0)
+                value = [key for key, val in pay_options.items() if val == value][0]
             elif name.startswith('BILL_AMT'):
-                value = st.number_input(name, value=None, format="%f")
-                st.session_state.bill_amts[idx - 11] = value
+                value = st.number_input(name, value=0.0, format="%f", step=1.0)
+                bill_amts.append(value)
             else:
-                value = st.number_input(name, value=None, format="%f")
-            st.session_state.feature_values[idx] = value
+                value = st.number_input(name, value=0.0, format="%f", step=1.0)
+            feature_values.append(value)
 
-# Handle navigation
-if st.session_state.page < len(pages) - 1:
-    handle_input(st.session_state.page)
-    if st.button('Next'):
-        st.session_state.page += 1
-else:
-    handle_input(st.session_state.page)
-    if st.button('Predict Default', key='predict_button', help="Click to predict whether there will be a default."):
-        # Calculate CHANGE_AMT1 to CHANGE_AMT5
-        change_amts = [st.session_state.bill_amts[i+1] - st.session_state.bill_amts[i] for i in range(5)]
+# Calculate CHANGE_AMT1 to CHANGE_AMT5
+change_amts = [bill_amts[i+1] - bill_amts[i] for i in range(5)]
 
-        # Replace BILL_AMT1 to BILL_AMT6 with CHANGE_AMT1 to CHANGE_AMT5
-        final_feature_values = st.session_state.feature_values[:12] + change_amts + st.session_state.feature_values[18:]
+# Replace BILL_AMT1 to BILL_AMT6 with CHANGE_AMT1 to CHANGE_AMT5
+feature_values = feature_values[:12] + change_amts + feature_values[18:]
 
-        data = np.array(final_feature_values).reshape(1, -1)
+data = np.array(feature_values).reshape(1, -1)
 
-        # Scale the input data using the loaded scaler
-        data_scaled = scaler.transform(data)
+st.header('   ')
+st.header('   ')
 
-        # Predict using the loaded model
-        prediction = model.predict(data_scaled)
 
-        # Display the prediction
-        result = 'Default' if prediction[0] == 1 else 'Not Default'
-        st.write(f'Prediction: **{result}**')
+if st.button('Predict Default', key='predict_button', help="Click to predict whether there will be a default."):
+    # Scale the input data using the loaded scaler
+    data_scaled = scaler.transform(data)
 
-    if st.button('Back'):
-        st.session_state.page -= 1
+    # Predict using the loaded model
+    prediction = model.predict(data_scaled)
+
+    # Display the prediction
+    result = 'Default' if prediction[0] == 1 else 'Not Default'
+    st.write(f'Prediction: **{result}**')
+
+
+st.markdown("</div>", unsafe_allow_html=True)
