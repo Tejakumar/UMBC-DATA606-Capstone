@@ -99,9 +99,9 @@ data = np.array(feature_values).reshape(1, -1)
 
 st.header('   ')
 
-col1, col2 = st.columns([1, 2])
+col1, col2, col3 = st.columns([1, 2, 3])
 
-with col1:
+with col2:
     if st.button('Predict Default', key='predict_button', help="Click to predict whether there will be a default."):
         # Scale the input data using the loaded scaler
         data_scaled = scaler.transform(data)
@@ -113,7 +113,7 @@ with col1:
         result = 'Default' if prediction[0] == 1 else 'Not Default'
         st.session_state['result'] = result
 
-with col2:
+with col3:
     if 'result' in st.session_state:
         st.write(f'Prediction: **{st.session_state["result"]}**')
 
