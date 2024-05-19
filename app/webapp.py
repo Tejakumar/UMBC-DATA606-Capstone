@@ -99,7 +99,7 @@ data = np.array(feature_values).reshape(1, -1)
 
 st.header('   ')
 
-col1, col2, col3 = st.columns([2, 1, 1])
+col1, col2, col3 = st.columns([1, 1, 1])
 
 with col2:
     if st.button('Predict Default', key='predict_button', help="Click to predict whether there will be a default."):
