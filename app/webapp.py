@@ -32,6 +32,12 @@ feature_names = [
     'BILL_AMT3', 'BILL_AMT4', 'BILL_AMT5', 'BILL_AMT6', 'PAY_AMT1',
     'PAY_AMT2', 'PAY_AMT3', 'PAY_AMT4', 'PAY_AMT5', 'PAY_AMT6'
 ]
+display_names = [
+    'Credit Limit', 'Sex', 'Education', 'Marriage', 'Age', 'Month 1',
+    'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6', 'Month 1', 'Month 2', 
+    'Month 3', 'Month 4', 'Month 5', 'Month 6', 'Month 1', 'Month 2', 
+    'Month 3', 'Month 4', 'Month 5', 'Month 6'
+]
 
 # Create inputs for the features
 feature_values = []
@@ -42,6 +48,13 @@ input_rows = [
     feature_names[5:11],
     feature_names[11:17],
     feature_names[17:23],
+]
+
+display_rows = [
+    display_names[:5],
+    display_names[5:11],
+    display_names[11:17],
+    display_names[17:23],
 ]
 
 # Mapping for dropdown options
@@ -55,31 +68,31 @@ pay_options = {-2: 'No transactions', -1: 'Paid in full', 0: 'Minimum due paid',
 
 bill_amts = []
 
-for row in input_rows:
+for row, display_row in zip(input_rows, display_rows):
     cols = st.columns(len(row))
-    for col, name in zip(cols, row):
+    for col, name, display_name in zip(cols, row, display_row):
         with col:
             if name == 'SEX':
-                value = st.selectbox(name, options=[''] + list(sex_options.values()), index=0)
+                value = st.selectbox(display_name, options=[''] + list(sex_options.values()), index=0)
                 value = [key for key, val in sex_options.items() if val == value][0] if value else 0
             elif name == 'EDUCATION':
-                value = st.selectbox(name, options=[''] + list(education_options.values()), index=0)
+                value = st.selectbox(display_name, options=[''] + list(education_options.values()), index=0)
                 value = [key for key, val in education_options.items() if val == value][0] if value else 0
             elif name == 'MARRIAGE':
-                value = st.selectbox(name, options=[''] + list(marriage_options.values()), index=0)
+                value = st.selectbox(display_name, options=[''] + list(marriage_options.values()), index=0)
                 value = [key for key, val in marriage_options.items() if val == value][0] if value else 0
             elif name.startswith('PAY_AMT'):
-                value = st.number_input(name, value=None, format="%f", step=1.0)
+                value = st.number_input(display_name, value=None, format="%f", step=1.0)
                 value = value if value is not None else 0.0
             elif name.startswith('PAY_'):
-                value = st.selectbox(name, options=[''] + list(pay_options.values()), index=0)
+                value = st.selectbox(display_name, options=[''] + list(pay_options.values()), index=0)
                 value = [key for key, val in pay_options.items() if val == value][0] if value else 0
             elif name.startswith('BILL_AMT'):
-                value = st.number_input(name, value=None, format="%f", step=1.0)
+                value = st.number_input(display_name, value=None, format="%f", step=1.0)
                 value = value if value is not None else 0.0
                 bill_amts.append(value)
             else:
-                value = st.number_input(name, value=None, format="%f", step=1.0)
+                value = st.number_input(display_name, value=None, format="%f", step=1.0)
                 value = value if value is not None else 0.0
             feature_values.append(value)
     if row == input_rows[0]:
