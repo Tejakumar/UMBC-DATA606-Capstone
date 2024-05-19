@@ -7,7 +7,7 @@ html, body, [class*="View"] {
     padding: 0px !important;
 }
 .stApp {
-    background-image: url("https://wallpapercave.com/wp/wp3982250.jpg");
+    background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg_img.png?raw=true");
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
