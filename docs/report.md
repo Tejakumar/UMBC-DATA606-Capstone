@@ -6,9 +6,9 @@
 **Project Title:** Credit Card Default Prediction  
 **Prepared for:** UMBC Data Science Master Degree Capstone by Dr. Chaojie (Jay) Wang  
 **Author Name** Teja Kumar Reddy Peddi  
-**Github:** [Github](https://github.com/tejapeddi1)  
-**Linkedin:** [linkedin](https://www.linkedin.com/in/teja-peddi-462190191/)  
-**Presentation:**  
+**Github:** [Github Link](https://github.com/tejapeddi1)  
+**Linkedin:** [linkedin Link](https://www.linkedin.com/in/teja-peddi-462190191/)  
+**Presentation:** [PPT Link](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/Presentation.pdf)
 **Youtube:** 
 
 ## Background
@@ -92,10 +92,20 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
 - Precision : 0.75
 - Recall : 0.74
 - F1-Score : 0.74
+Accuracy: Decent accuracy of 74.25% for an imbalanced problem  
+Precision, Recall, and F1-Score: The model performs better at identifying negatives (Class 0) than positives (Class 1)  
 
-**Confusion Matrix**  
-![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/10.png)  
-The Confusion matrix shows that we have a good balance of the values with very less False Positive and False Negative Values  
+![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/10.png)   
+Confusion Matrix Insights: There is a decent balance of values for general predictability but there is space for improvement for false negatives which can be achieved using better data
+
+### Future Scope
+- Incorporating More Data: As we know machine learning models are garbage in - garbage out, A balanced data and an adequate amount of samples of both the classes can significantly improve the model's accuracy and predictive power.
+- Real-Time Prediction Systems: Developing real-time prediction capabilities will allow for instant risk assessments, enabling financial institutions to make timely and informed decisions.
+- Continuous Monitoring and Recalibration: Regularly updating and recalibrating the model will ensure it remains effective and accurate in response to changing economic conditions and consumer behaviors.
 
 ### Conclusion
-- Overall, the Random Forest model with tuned parameters using GridSearchCV has acheived an Accuracy of 74.25% in predicting credit card defaults using various demographic factors and previous payment histories
+- The Random Forest model with tuned parameters using GridSearchCV has acheived an Accuracy of 74.25% in predicting credit card defaults using various demographic factors and previous payment histories
+- Overall, the trained machine learning model offers a robust tool for financial institutions to manage credit risk effectively.
+- By identifying high-risk customers through key features like payment history and credit utilization, the model enables proactive risk management and more informed lending decisions.
+- This predictive capability can lead to reduced default rates and improved financial stability.
+- Future enhancements and real-time implementations promise even greater accuracy and adaptability to changing economic conditions
