@@ -1,7 +1,5 @@
-|| <!-- empty table header -->
-|:--:| <!-- table header/body separator with center formatting -->
-| I'm centered! | <!-- cell gets column's alignment -->
-| Project Report |
+
+<p align="center">Project Report
 
 ## Title and Author
 
