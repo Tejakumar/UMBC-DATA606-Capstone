@@ -44,10 +44,10 @@ if 'feature_values' not in st.session_state:
 
 # Page navigation
 pages = [
-    feature_names[:6],
-    feature_names[6:12],
-    feature_names[12:18],
-    feature_names[18:],
+    feature_names[:5],
+    feature_names[5:11],
+    feature_names[11:17],
+    feature_names[17:23],
 ]
 
 # Input form
@@ -82,6 +82,7 @@ for name in input_row:
 if st.session_state.page_num < len(pages) - 1:
     if st.button('Next'):
         st.session_state.page_num += 1
+        st.experimental_rerun()  # Rerun the app to update the page
 elif st.session_state.page_num == len(pages) - 1:
     if st.button('Predict'):
         data = np.array(st.session_state.feature_values).reshape(1, -1)
@@ -94,6 +95,8 @@ elif st.session_state.page_num == len(pages) - 1:
 if st.session_state.page_num > 0:
     if st.button('Previous'):
         st.session_state.page_num -= 1
+        st.experimental_rerun()  # Rerun the app to update the page
+
 
 
 
