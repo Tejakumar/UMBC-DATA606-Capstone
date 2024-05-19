@@ -69,15 +69,18 @@ for row in input_rows:
                 value = st.selectbox(name, options=[''] + list(marriage_options.values()), index=0)
                 value = [key for key, val in marriage_options.items() if val == value][0] if value else 0
             elif name.startswith('PAY_AMT'):
-                value = st.number_input(name, value=0.0, format="%f", step=1.0)
+                value = st.number_input(name, value=None, format="%f", step=1.0)
+                value = value if value is not None else 0.0
             elif name.startswith('PAY_'):
                 value = st.selectbox(name, options=[''] + list(pay_options.values()), index=0)
                 value = [key for key, val in pay_options.items() if val == value][0] if value else 0
             elif name.startswith('BILL_AMT'):
-                value = st.number_input(name, value=0.0, format="%f", step=1.0)
+                value = st.number_input(name, value=None, format="%f", step=1.0)
+                value = value if value is not None else 0.0
                 bill_amts.append(value)
             else:
-                value = st.number_input(name, value=0.0, format="%f", step=1.0)
+                value = st.number_input(name, value=None, format="%f", step=1.0)
+                value = value if value is not None else 0.0
             feature_values.append(value)
 
 # Calculate CHANGE_AMT1 to CHANGE_AMT5
