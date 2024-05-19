@@ -2,6 +2,8 @@ import streamlit as st
 import pickle
 import numpy as np 
 
+st.set_page_config(layout="wide")
+
 css_code = """
 <style>
 html, body, [class*="View"] {
@@ -17,8 +19,6 @@ html, body, [class*="View"] {
 </style>
 """
 st.markdown(css_code, unsafe_allow_html=True)
-
-st.set_page_config(layout="wide")
 
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
