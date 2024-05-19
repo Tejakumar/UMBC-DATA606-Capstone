@@ -1,24 +1,9 @@
 import streamlit as st
 import pickle
 import numpy as np 
+import requests
 
 st.set_page_config(layout="wide")
-
-css_code = """
-<style>
-html, body, [class*="View"] {
-    margin: 0px !important;
-    padding: 0px !important;
-}
-.stApp {
-    background-image: url("https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/app/bg.png?raw=True");
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
-}
-</style>
-"""
-st.markdown(css_code, unsafe_allow_html=True)
 
 model = pickle.load(open('app/model.pkl', 'rb'))
 scaler = pickle.load(open('app/scaler.pkl', 'rb'))
@@ -70,15 +55,15 @@ for row in input_rows:
                 value = st.selectbox(name, options=list(marriage_options.values()), index=0)
                 value = [key for key, val in marriage_options.items() if val == value][0]
             elif name.startswith('PAY_AMT'):
-                value = st.number_input(name, value=None, format="%f", step=1.0)
+                value = st.number_input(name, value=0.0, format="%f", step=1.0)
             elif name.startswith('PAY_'):
                 value = st.selectbox(name, options=list(pay_options.values()), index=0)
                 value = [key for key, val in pay_options.items() if val == value][0]
             elif name.startswith('BILL_AMT'):
-                value = st.number_input(name, value=None, format="%f", step=1.0)
+                value = st.number_input(name, value=0.0, format="%f", step=1.0)
                 bill_amts.append(value)
             else:
-                value = st.number_input(name, value=None, format="%f", step=1.0)
+                value = st.number_input(name, value=0.0, format="%f", step=1.0)
             feature_values.append(value)
 
 # Calculate CHANGE_AMT1 to CHANGE_AMT5
