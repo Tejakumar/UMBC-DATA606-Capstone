@@ -98,7 +98,6 @@ feature_values = feature_values[:12] + change_amts + feature_values[18:]
 data = np.array(feature_values).reshape(1, -1)
 
 st.header('   ')
-st.header('   ')
 
 if st.button('Predict Default', key='predict_button', help="Click to predict whether there will be a default."):
     # Scale the input data using the loaded scaler
