@@ -4,6 +4,22 @@ import numpy as np
 
 st.set_page_config(layout="wide")
 
+css_code = """
+<style>
+html, body, [class*="View"] {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.stApp {
+    background-image: url("");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(css_code, unsafe_allow_html=True)
+
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 
