@@ -1,6 +1,6 @@
 import streamlit as st
 import pickle
-import numpy as np
+import numpy as np 
 
 st.set_page_config(layout="wide")
 
@@ -22,11 +22,10 @@ st.markdown(css_code, unsafe_allow_html=True)
 
 st.markdown("<div style='text-align: center;'><h1>Credit Card Default Prediction</h1></div>", unsafe_allow_html=True)
 
-# Load the pre-trained model and scaler
 model = pickle.load(open('app/model.pkl', 'rb'))
 scaler = pickle.load(open('app/scaler.pkl', 'rb'))
 
-# Feature names and display names
+# Define feature names as per the dataset
 feature_names = [
     'LIMIT_BAL', 'SEX', 'EDUCATION', 'MARRIAGE', 'AGE', 'PAY_1',
     'PAY_2', 'PAY_3', 'PAY_4', 'PAY_5', 'PAY_6', 'BILL_AMT1', 'BILL_AMT2',
@@ -34,7 +33,41 @@ feature_names = [
     'PAY_AMT2', 'PAY_AMT3', 'PAY_AMT4', 'PAY_AMT5', 'PAY_AMT6'
 ]
 
-# Define mappings for dropdown options
+# Define labels for display
+display_labels = {
+    'LIMIT_BAL': 'Credit Limit',
+    'PAY_1': 'Month1 - Payment Status',
+    'PAY_2': 'Month2 - Payment Status',
+    'PAY_3': 'Month3 - Payment Status',
+    'PAY_4': 'Month4 - Payment Status',
+    'PAY_5': 'Month5 - Payment Status',
+    'PAY_6': 'Month6 - Payment Status',
+    'BILL_AMT1': 'Month1 - Bill Amount',
+    'BILL_AMT2': 'Month2 - Bill Amount',
+    'BILL_AMT3': 'Month3 - Bill Amount',
+    'BILL_AMT4': 'Month4 - Bill Amount',
+    'BILL_AMT5': 'Month5 - Bill Amount',
+    'BILL_AMT6': 'Month6 - Bill Amount',
+    'PAY_AMT1': 'Month1 - Payment Amount',
+    'PAY_AMT2': 'Month2 - Payment Amount',
+    'PAY_AMT3': 'Month3 - Payment Amount',
+    'PAY_AMT4': 'Month4 - Payment Amount',
+    'PAY_AMT5': 'Month5 - Payment Amount',
+    'PAY_AMT6': 'Month6 - Payment Amount',
+}
+
+# Create inputs for the features
+feature_values = []
+
+# Use columns to organize the inputs
+input_rows = [
+    feature_names[:5],
+    feature_names[5:11],
+    feature_names[11:17],
+    feature_names[17:23],
+]
+
+# Mapping for dropdown options
 sex_options = {1: 'male', 2: 'female'}
 education_options = {1: 'graduate school', 2: 'university', 3: 'high school', 4: 'others'}
 marriage_options = {1: 'married', 2: 'single', 3: 'divorce'}
@@ -43,51 +76,52 @@ pay_options = {-2: 'No transactions', -1: 'Paid in full', 0: 'Minimum due paid',
                4: '4 months delay', 5: '5 months delay', 6: '6 months delay', 
                7: '7 months delay', 8: '8 months delay'}
 
-# Initialize the input features list
-feature_values = []
+bill_amts = []
 
-# Define rows of input features for better organization
-input_rows = [
-    feature_names[:5],
-    feature_names[5:11],
-    feature_names[11:17],
-    feature_names[17:23],
-]
-
-# Function to get value from selectbox
-def get_selectbox_value(label, options_dict):
-    value = st.selectbox(label, options=[''] + list(options_dict.values()), index=0)
-    return [key for key, val in options_dict.items() if val == value][0] if value else 0
-
-# Collect user inputs
 for row in input_rows:
     cols = st.columns(len(row))
     for col, name in zip(cols, row):
         with col:
+            label = display_labels.get(name, name)
             if name == 'SEX':
-                value = get_selectbox_value(name, sex_options)
+                value = st.selectbox(label, options=[''] + list(sex_options.values()), index=0)
+                value = [key for key, val in sex_options.items() if val == value][0] if value else 0
             elif name == 'EDUCATION':
-                value = get_selectbox_value(name, education_options)
+                value = st.selectbox(label, options=[''] + list(education_options.values()), index=0)
+                value = [key for key, val in education_options.items() if val == value][0] if value else 0
             elif name == 'MARRIAGE':
-                value = get_selectbox_value(name, marriage_options)
+                value = st.selectbox(label, options=[''] + list(marriage_options.values()), index=0)
+                value = [key for key, val in marriage_options.items() if val == value][0] if value else 0
+            elif name.startswith('PAY_AMT'):
+                value = st.number_input(label, value=None, format="%f", step=1.0)
+                value = value if value is not None else 0.0
             elif name.startswith('PAY_'):
-                value = get_selectbox_value(name, pay_options)
-            elif name.startswith('BILL_AMT') or name.startswith('PAY_AMT'):
-                value = st.number_input(name, value=0.0, format="%f", step=1.0)
+                value = st.selectbox(label, options=[''] + list(pay_options.values()), index=0)
+                value = [key for key, val in pay_options.items() if val == value][0] if value else 0
+            elif name.startswith('BILL_AMT'):
+                value = st.number_input(label, value=None, format="%f", step=1.0)
+                value = value if value is not None else 0.0
+                bill_amts.append(value)
             else:
-                value = st.number_input(name, value=0.0, format="%f", step=1.0)
+                value = st.number_input(label, value=None, format="%f", step=1.0)
+                value = value if value is not None else 0.0
             feature_values.append(value)
+    if row == input_rows[0]:
+        st.markdown("<div style='text-align: left;'><h4>Payment Status</h4></div>", unsafe_allow_html=True)
+    if row == input_rows[1]:
+        st.markdown("<div style='text-align: left;'><h4>Bill Amount</h4></div>", unsafe_allow_html=True)
+    if row == input_rows[2]:
+        st.markdown("<div style='text-align: left;'><h4>Payment Amount</h4></div>", unsafe_allow_html=True)
 
-# Calculate change amounts (delta values)
-bill_amts = feature_values[11:17]
+# Calculate CHANGE_AMT1 to CHANGE_AMT5
 change_amts = [bill_amts[i+1] - bill_amts[i] for i in range(5)]
 
-# Replace BILL_AMT1 to BILL_AMT6 with CHANGE_AMT1 to CHANGE_AMT5 in feature_values
-feature_values = feature_values[:11] + change_amts + feature_values[17:]
+# Replace BILL_AMT1 to BILL_AMT6 with CHANGE_AMT1 to CHANGE_AMT5
+feature_values = feature_values[:12] + change_amts + feature_values[18:]
 
 data = np.array(feature_values).reshape(1, -1)
 
-st.header('')
+st.header('   ')
 
 col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
 
@@ -97,18 +131,7 @@ with col3:
         data_scaled = scaler.transform(data)
 
         # Predict using the loaded model
-        prediction = model.predict(data_scaled)
-
-        # Display the prediction result
-        result = 'Default' if prediction[0] == 1 else 'Not Default'
-        st.session_state['result'] = result
-
-with col4:
-    if 'result' in st.session_state:
-        st.write(f'Prediction: **{st.session_state["result"]}**')
-
-st.markdown("</div>", unsafe_allow_html=True)
-
+       
 
 
 # import streamlit as st
