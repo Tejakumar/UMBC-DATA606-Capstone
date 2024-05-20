@@ -84,7 +84,7 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
    - Over 30% of default can be observed with credit limit of 1500USD or less
    - Also, the higher the credit limit, the lower is the chance of defaulting  
 6. Insights on Previous month payment status  
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/9.png)  
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/pay.png)  
    - There is a higher default rate among those who paid nothing in previous months and a lower default rate among those who have done payment over 500USD.
 
 ### Modelling
