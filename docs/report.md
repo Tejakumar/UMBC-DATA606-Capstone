@@ -68,20 +68,20 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
 
 ### Exploratory Data Analysis
 1. Insights on Age  
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/2.png)  
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/age.png)  
    The age group of 30-35 years old has lowest chances for defaulting, while the highest occur at the extremes(20-25 and 60+)  
 2. Insights on Gender  
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/4.png)  
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/sex.png)  
    It is observed that Men have a slightly higher chance of defaulting than women  
 3. Insights on Marital Status  
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/6.png)  
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/marriage.png)  
    It is observed that Single people have lower chances of defaulting than married and divorced people  
 4. Insights on Education Level  
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/8.png)  
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/education.png)  
    Considering the level of education, it seems that a higher education translates to a lower chance of default  
 5. Insights of Credit Limit  
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/lim2.png)  
-   - Over 30% of default can be observed with credit limit of 50K or less
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/credit.png)  
+   - Over 30% of default can be observed with credit limit of 1500USD or less
    - Also, the higher the credit limit, the lower is the chance of defaulting  
 6. Insights on Previous month payment status  
    ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/9.png)  
@@ -105,6 +105,10 @@ Precision, Recall, and F1-Score: The model performs better at identifying negati
 
 ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/10.png)   
 Confusion Matrix Insights: There is a decent balance of values for general predictability but there is space for improvement for false negatives which can be achieved using better data
+
+### Web Application
+- Used Streamlit for deploying the model
+![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/SSS.png) 
 
 ### Future Scope
 - Incorporating More Data: As we know machine learning models are garbage in - garbage out, A balanced data and an adequate amount of samples of both the classes can significantly improve the model's accuracy and predictive power.
