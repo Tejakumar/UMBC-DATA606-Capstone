@@ -18,7 +18,7 @@ SPRING 2024
 **Linkedin:** [linkedin Link](https://www.linkedin.com/in/teja-peddi-462190191/)  
 **Presentation:** [PPT Link](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/Presentation.pdf)  
 **Youtube:** [Youtube Video Link](https://youtu.be/jgnT3OSjeBU)  
-**Web Application** [Website Link](https://creditdefaultprediction.streamlit.app)
+**Web Application:** [Website Link](https://creditdefaultprediction.streamlit.app)
 
 ## Background
 
