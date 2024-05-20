@@ -1,11 +1,6 @@
 # UMBC-DATA606-Capstone
 <h2>
-**Project Title:** Credit Card Default Prediction  
-   
-**Prepared for:** UMBC Data Science Master Degree Capstone by Dr. Chaojie (Jay) Wang  
-**Author Name:** Teja Kumar Reddy Peddi  
-SPRING 2024
-
+Project Title: Credit Card Default Prediction  
 </h2>
 
 **Github:** [Github Link](https://github.com/tejapeddi1/UMBC-DATA606-Capstone)  
