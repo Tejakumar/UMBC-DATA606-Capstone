@@ -77,7 +77,7 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
    ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/marriage.png)  
    It is observed that Single people have lower chances of defaulting than married and divorced people  
 4. Insights on Education Level  
-   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/education.png)  
+   ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/edu.png)  
    Considering the level of education, it seems that a higher education translates to a lower chance of default  
 5. Insights of Credit Limit  
    ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/credit.png)  
