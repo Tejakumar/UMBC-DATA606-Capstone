@@ -23,8 +23,8 @@ st.markdown(css_code, unsafe_allow_html=True)
 
 st.markdown("<div style='text-align: center;'><h1>Credit Card Default Prediction</h1></div>", unsafe_allow_html=True)
 
-model = pickle.load(open('app/model.pkl', 'rb'))
-scaler = pickle.load(open('app/scaler.pkl', 'rb'))
+model = pickle.load(open('app/model1.pkl', 'rb'))
+scaler = pickle.load(open('app/scaler1.pkl', 'rb'))
 
 # Define feature names as per the dataset
 feature_names = [
