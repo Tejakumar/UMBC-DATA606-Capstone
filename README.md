@@ -7,4 +7,4 @@ Project Title: Credit Card Default Prediction
 **Web Application:** [Website Link](https://creditdefaultprediction.streamlit.app)  
 **Youtube Video:** [Link](https://youtu.be/jgnT3OSjeBU)  
 
-[](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/SSS.png)
+![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/SSS.png)
