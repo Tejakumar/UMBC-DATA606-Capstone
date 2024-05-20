@@ -85,7 +85,7 @@ By analyzing this dataset and applying machine learning algorithms, we aim to bu
    - Also, the higher the credit limit, the lower is the chance of defaulting  
 6. Insights on Previous month payment status  
    ![](https://github.com/tejapeddi1/UMBC-DATA606-Capstone/blob/main/docs/images/9.png)  
-   It is observed that the likelihood of default are much lower for the people who duly paid or paying minimum due each month rather than the people who tend to delay their payment over months.
+   - There is a higher default rate among those who paid nothing in previous months and a lower default rate among those who have done payment over 500USD.
 
 ### Modelling
  - As the data was unbalanced, I have undersampled the majority class and slightly oversampled the minority class
